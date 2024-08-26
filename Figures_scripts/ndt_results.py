@@ -133,8 +133,8 @@ def adjust_box(ax: plt.Axes):
     #patches[12].set_y(7-1/6)
     
 # Number of change-points
-fig = plt.figure(constrained_layout=True, figsize=(4,3))
-ax = fig.subplot_mosaic([['legend', 'legend'],[0,1]], 
+fig = plt.figure(constrained_layout=True, figsize=(3,3))
+ax = fig.subplot_mosaic([['legend'],[0]], 
                           gridspec_kw={'height_ratios':[0.001, 1]})
 ax['legend'].axis('off')
 
@@ -162,7 +162,7 @@ handles, labels = ax[0].get_legend_handles_labels()
 ax[0].get_legend().remove()
 adjust_box(ax[0])
 
-
+'''
 df_ = df.groupby(['method'], as_index=False)['elapsed_time'].sum()
 df_['method_name'] = [method_name(m) for m in df_['method']]
 df_['method_type'] = [method_type(m) for m in df_['method']]
@@ -173,6 +173,7 @@ _ = sns.barplot(data=df_, y='method_name', x='elapsed_time', hue='method_type',
                 errorbar=None, saturation=1, ax=ax[1], zorder=2, width=1,
                 palette=[C0,C1,C2], legend=False)
 
+
 ax[1].set_xlabel("Elapsed time (s)")
 ax[1].set_xscale('log')
 ax[1].set_ylabel("")
@@ -181,13 +182,13 @@ ax[1].set_yticklabels('')
 ax[1].grid(axis='x', zorder=1, linestyle=':')
 ax[1].set_xticks([1e-1, 1e0, 1e1, 1e2, 1e3])
 adjust_box(ax[1])
-
+'''
 _ = ax['legend'].legend(handles, labels, loc="upper center", 
                     ncol=3, fontsize=8, frameon=True, handletextpad=0.1,
-                    columnspacing=1)
+                    columnspacing=0.3)
 
 
-# Download quality worsening in the mean per client and serie - function of delta
+#%% Download quality worsening in the mean per client and serie - function of delta
 markers = [',', 'o', 'x', 'v', 's', 'D']
 methods_name = ['Shewhart', 'EWMA', '2S-CUSUM', 'WL-CUSUM', 'VWCD']
 k=0
