@@ -3,9 +3,11 @@
 ## Description
 This repository contains the code and data used in the paper **Inferring change-points in unlabelled time series data collected from the Network Diagnosis Tool** submited to [Annals of Telecommunication](https://www.springer.com/engineering/signals/journal/12243). If you find any bug or have some doubt or observation, please let us know. 
 
-This paper is an extension of that presented on the [42th Brazilian Symposium on Computer Networks and Distributed Systems](https://github.com/cleitonmoya/sbrc24). We have augmented the NDT Dataset with 260% more mearesuments, evaluated a new labeled dataset, the [Shao Dataset](https://github.com/WenqinSHAO/rtt/tree/master/dataset/real_trace_labelled) and evaluated two new algorithms: The Bayesian Online Changepoint Detection ([BOCD](https://arxiv.org/abs/0710.3742))and the Robust Random Cut Forest ([RRCF](https://proceedings.mlr.press/v48/guha16.html)), including proposed modifications. 
+This paper is an extension of that presented on the [42th Brazilian Symposium on Computer Networks and Distributed Systems](https://github.com/cleitonmoya/sbrc24). We have augmented the NDT Dataset with 260% more mearesuments, evaluated a new labeled dataset, the [Shao Dataset](https://github.com/WenqinSHAO/rtt/tree/master/dataset/real_trace_labelled) and evaluated two new algorithms: The Bayesian Online Changepoint Detection ([BOCD](https://arxiv.org/abs/0710.3742)) and the Robust Random Cut Forest ([RRCF](https://proceedings.mlr.press/v48/guha16.html)), including proposed modifications. 
+
 
 ```
+
 ## Instructions
 - The changepoint methods are implemented in the module [Experiment/changepoint_module.py](Experiment/changepoint_module.py).
 - There are three experiments:
